@@ -2,15 +2,16 @@
 const express = require("express");
 const cors = require("cors");
 const Stripe = require("stripe");
-const stripe = Stripe('sk_test_51KOyP1SFGr0qO0IewCSP1tWTG9VVRN7KLlbssB1yF08L3oVP5Ii6HH6B5amsvAkOaiQ7BmJDE9Hp4FKiSQEBgCjN00Fxso1Bds');
+const stripe = Stripe('sk_test_51KOyP1SFGr0qO0IeXwbVMEmptWqBOhvpNIxIMqbCwn6qkBguKp2EPOJkVNNEyrKhe8GJCcxIQuuvx2joGajPW404007gcH0BRS');
 const app = express();
 const PORT = 8080;
 
 // app.use("/stripe", express.raw({ type: "*/*" }));
+
 app.use(express.json());
 app.use(cors());
 
-app.get("/pay", async (req, res) => {  res.send("hello")})
+// app.get("/pay", async (req, res) => {  res.send("hello")})
 app.post("/pay", async (req, res) => {
 
   try {
